@@ -35,7 +35,6 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<h2>Video Walkthrough</h2>
 <img src="https://i.imgur.com/ChuyMGP.gif" alt="Video Walkthrough" width="500" />
 
 
