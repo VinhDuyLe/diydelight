@@ -14,7 +14,6 @@ const config = {
 
 export const pool = new pg.Pool(config);
 
-// Verify connection success
 pool.on('connect', () => {
     console.log('Connected to the PostgreSQL database');
 });
