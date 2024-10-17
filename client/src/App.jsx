@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRoutes } from 'react-router-dom';
+import { useRoutes, Navigate } from 'react-router-dom';  // Added Navigate for redirects
 import Navigation from './components/Navigation';
 import ViewCars from './pages/ViewCars';
 import EditCar from './pages/EditCar';
@@ -10,24 +10,28 @@ import './App.css';
 const App = () => {
   let element = useRoutes([
     {
-      path: '/',            // Root URL (can be homepage or any other page)
-      element: <ViewCars title='BOLT BUCKET | Custom Cars' />
+      path: '/',    // Redirect the root URL to /customcars to view all cars
+      element: <Navigate to='/customcars' />
     },
     {
-      path: '/create',      // Set up the /create URL to display the CreateCar page
+      path: '/create',   // Route for creating a new car
       element: <CreateCar title='BOLT BUCKET | Customize' />
     },
     {
-      path: '/customcars',  // List all custom cars
+      path: '/customcars',  // Route for listing all cars
       element: <ViewCars title='BOLT BUCKET | Custom Cars' />
     },
     {
-      path: '/customcars/:id', // View car details
+      path: '/customcars/:id',  // Route for viewing details of a specific car by ID
       element: <CarDetails title='BOLT BUCKET | View' />
     },
     {
-      path: '/edit/:id',    // Edit a car
+      path: '/edit/:id',   // Route for editing a specific car by ID
       element: <EditCar title='BOLT BUCKET | Edit' />
+    },
+    {
+      path: '*',    // Catch-all route to handle 404 or undefined routes
+      element: <Navigate to='/' />
     }
   ]);
 

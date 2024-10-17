@@ -1,15 +1,18 @@
 import { pool } from './database.js';
-import dotenv from 'dotenv';
-dotenv.config();
+
+console.log("Database connection details:");
+console.log("User:", process.env.PGUSER);
+console.log("Host:", process.env.PGHOST);
+console.log("Database:", process.env.PGDATABASE);
 
 const createTables = async () => {
     const query = `
         CREATE TABLE IF NOT EXISTS public.custom_items (
             id SERIAL PRIMARY KEY,
-            name VARCHAR(100),
-            price DECIMAL(10, 2),
-            exterior_color VARCHAR(50),  -- New column for exterior color
-            features JSONB
+            name VARCHAR(255) NOT NULL,
+            price DECIMAL(10, 2) NOT NULL,
+            exterior_color VARCHAR(50),
+            features JSONB NOT NULL
         );
     `;
     try {

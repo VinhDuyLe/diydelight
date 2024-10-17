@@ -30,7 +30,7 @@ const EditCar = () => {
         e.preventDefault();
         const updatedCar = { name, price, features };
         await updateCar(id, updatedCar);
-        navigate('/cars');
+        navigate('/customcars');
     };
 
     const handleFeatureChange = (e) => {
@@ -44,7 +44,7 @@ const EditCar = () => {
     return (
         <div>
             <h1>Edit Car</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} style={styles.form}>
                 <label>Name:</label>
                 <input value={name} onChange={(e) => setName(e.target.value)} required />
 
@@ -96,10 +96,31 @@ const EditCar = () => {
                     required
                 />
 
-                <button type="submit">Save Changes</button>
+                <button type="submit" style={styles.saveButton}>
+                    Save Changes
+                </button>
             </form>
         </div>
     );
+};
+
+const styles = {
+    form: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px',
+        maxWidth: '400px',
+        margin: '0 auto',
+    },
+    saveButton: {
+        padding: '10px 20px',
+        backgroundColor: '#4CAF50',
+        color: 'white',
+        border: 'none',
+        borderRadius: '5px',
+        cursor: 'pointer',
+        marginTop: '20px',
+    },
 };
 
 export default EditCar;

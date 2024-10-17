@@ -1,4 +1,7 @@
 import pg from 'pg';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const config = {
     user: process.env.PGUSER,
@@ -8,4 +11,4 @@ const config = {
     database: process.env.PGDATABASE
 };
 
-export const pool = new pg.Pool(config); // This initializes the connection pool
+export const pool = new pg.Pool(config);

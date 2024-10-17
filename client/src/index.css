@@ -66,3 +66,58 @@
     margin-top: 0px;
     display: flex;
 }
+
+
+#root button, #root input[type=submit] {
+    background-color: var(--primary);
+    color: var(--color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#root button:hover, #root input[type=submit]:hover {
+    background-color: var(--primary-hover);
+    color: var(--color);
+}
+
+#root .car-card {
+    background-color: var(--card-background-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color);
+}
+
+#root .car-info {
+    flex-grow: 1;
+}
+
+#root .car-actions {
+    display: flex;
+    gap: 10px;
+}
+
+#root .car-actions button {
+    padding: 8px 12px;
+    background-color: var(--primary);
+    color: var(--color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#root .car-actions button:hover {
+    background-color: var(--primary-hover);
+}
+
+#root .car-actions .delete-button {
+    background-color: #f44336; /* Red for delete */
+}
+
+#root .car-actions .delete-button:hover {
+    background-color: darkred;
+}

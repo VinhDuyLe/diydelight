@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const CreateCar = () => {
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
-    const [exteriorColor, setExteriorColor] = useState('');  // New state for exterior color
+    const [exteriorColor, setExteriorColor] = useState('');
     const [features, setFeatures] = useState({
         convertible: false,
         exterior: '',
@@ -20,7 +20,7 @@ const CreateCar = () => {
         e.preventDefault();
         const car = { name, price, exterior_color: exteriorColor, features };
         await createCar(car);
-        navigate('/cars');
+        navigate('/customcars');
     };
 
     const handleFeatureChange = (e) => {
@@ -34,7 +34,7 @@ const CreateCar = () => {
     return (
         <div>
             <h1>Create a New Car</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} style={styles.form}>
                 <label>Name:</label>
                 <input value={name} onChange={(e) => setName(e.target.value)} required />
 
@@ -46,7 +46,6 @@ const CreateCar = () => {
                     required
                 />
 
-                {/* New Color Picker for Exterior */}
                 <label>Exterior Color:</label>
                 <select value={exteriorColor} onChange={(e) => setExteriorColor(e.target.value)}>
                     <option value="">Select Color</option>
@@ -97,10 +96,31 @@ const CreateCar = () => {
                     required
                 />
 
-                <button type="submit">Create Car</button>
+                <button type="submit" style={styles.createButton}>
+                    Create Car
+                </button>
             </form>
         </div>
     );
+};
+
+const styles = {
+    form: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px',
+        maxWidth: '400px',
+        margin: '0 auto',
+    },
+    createButton: {
+        padding: '10px 20px',
+        backgroundColor: '#2196F3',
+        color: 'white',
+        border: 'none',
+        borderRadius: '5px',
+        cursor: 'pointer',
+        marginTop: '20px',
+    },
 };
 
 export default CreateCar;
