@@ -35,7 +35,9 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='https://i.imgur.com/ChuyMGP.gif' title='Video Walkthrough' width='500' alt='Video Walkthrough' />
+<h2>Video Walkthrough</h2>
+<img src="https://i.imgur.com/ChuyMGP.gif" alt="Video Walkthrough" width="500" />
+
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with [Kap](https://getkap.co/)
