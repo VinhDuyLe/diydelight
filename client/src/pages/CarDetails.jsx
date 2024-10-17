@@ -1,4 +1,3 @@
-// client/src/pages/CarDetails.jsx
 import React, { useState, useEffect } from 'react';
 import { getCar } from '../services/CarsAPI';
 import { useParams } from 'react-router-dom';
@@ -9,8 +8,8 @@ const CarDetails = () => {
 
     useEffect(() => {
         const fetchCar = async () => {
-            const fetchedCar = await getCar(id);  // Fetch car details by ID
-            setCar(fetchedCar);  // Set the car details in state
+            const fetchedCar = await getCar(id);  
+            setCar(fetchedCar);  
         };
         fetchCar();
     }, [id]);
@@ -26,7 +25,7 @@ const CarDetails = () => {
             <p><strong>Roof:</strong> {car.features.roof}</p>
             <p><strong>Wheels:</strong> {car.features.wheels}</p>
             <p><strong>Interior:</strong> {car.features.interior}</p>
-            <p><strong>Exterior Color:</strong> {car.exterior_color}</p> {/* Display exterior color */}
+            <p><strong>Exterior Color:</strong> {car.exterior_color}</p> {}
         </div>
     );
 };

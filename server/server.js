@@ -2,9 +2,8 @@ import express from 'express';
 import path from 'path';
 import favicon from 'serve-favicon';
 import dotenv from 'dotenv';
-import cors from 'cors';  // Import the cors package
+import cors from 'cors';  
 
-// Import the router from your routes file
 import customItemRoutes from './routes/customItemRoutes.js';
 
 dotenv.config();
@@ -25,7 +24,6 @@ if (process.env.NODE_ENV === 'development') {
     app.use(express.static('public'));
 }
 
-// Specify the API path for the server to use
 app.use('/api', customItemRoutes);
 
 if (process.env.NODE_ENV === 'production') {

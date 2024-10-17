@@ -3,8 +3,8 @@ import { pool } from '../config/database.js';
 export const getAllItems = async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM custom_items');
-        console.log(result.rows);  // Log fetched data
-        res.json(result.rows);     // Send all rows as JSON
+        console.log(result.rows);  
+        res.json(result.rows);    
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Server error' });
@@ -14,7 +14,7 @@ export const getAllItems = async (req, res) => {
 
 export const createItem = async (req, res) => {
     try {
-        console.log("Received request body:", req.body); // Log the body
+        console.log("Received request body:", req.body); 
         const { name, price, exterior_color, features } = req.body;
 
         if (!name || !price || !features) {
@@ -27,7 +27,7 @@ export const createItem = async (req, res) => {
         );
         res.json(result.rows[0]);
     } catch (err) {
-        console.error('Error inserting into database:', err); // Log the error
+        console.error('Error inserting into database:', err); 
         res.status(500).json({ error: 'Failed to create item' });
     }
 };

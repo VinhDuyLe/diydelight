@@ -1,4 +1,3 @@
-// client/src/pages/ViewCars.jsx
 import React, { useState, useEffect } from 'react';
 import { getAllCars, deleteCar } from '../services/CarsAPI';
 import { Link, useNavigate } from 'react-router-dom';
@@ -19,7 +18,7 @@ const ViewCars = () => {
         const confirmDelete = window.confirm('Are you sure you want to delete this car?');
         if (confirmDelete) {
             await deleteCar(id);
-            setCars(cars.filter((car) => car.id !== id)); // Remove deleted car from the state
+            setCars(cars.filter((car) => car.id !== id)); 
         }
     };
 

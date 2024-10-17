@@ -1,4 +1,3 @@
-// client/src/pages/EditCar.jsx
 import React, { useState, useEffect } from 'react';
 import { getCar, updateCar } from '../services/CarsAPI';
 import { useParams, useNavigate } from 'react-router-dom';

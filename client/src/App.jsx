@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRoutes, Navigate } from 'react-router-dom';  // Added Navigate for redirects
+import { useRoutes, Navigate } from 'react-router-dom'; 
 import Navigation from './components/Navigation';
 import ViewCars from './pages/ViewCars';
 import EditCar from './pages/EditCar';

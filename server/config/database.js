@@ -8,7 +8,18 @@ const config = {
     password: process.env.PGPASSWORD,
     host: process.env.PGHOST,
     port: process.env.PGPORT,
-    database: process.env.PGDATABASE
+    database: process.env.PGDATABASE,
 };
 
+
 export const pool = new pg.Pool(config);
+
+// Verify connection success
+pool.on('connect', () => {
+    console.log('Connected to the PostgreSQL database');
+});
+
+pool.on('error', (err) => {
+    console.error('Unexpected error on idle PostgreSQL client', err);
+    process.exit(-1);
+});

@@ -7,7 +7,7 @@ console.log("Database:", process.env.PGDATABASE);
 
 const createTables = async () => {
     const query = `
-        CREATE TABLE IF NOT EXISTS public.custom_items (
+        CREATE TABLE IF NOT EXISTS custom_items (
             id SERIAL PRIMARY KEY,
             name VARCHAR(255) NOT NULL,
             price DECIMAL(10, 2) NOT NULL,

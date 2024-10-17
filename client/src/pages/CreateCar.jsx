@@ -1,4 +1,3 @@
-// client/src/pages/CreateCar.jsx
 import React, { useState } from 'react';
 import { createCar } from '../services/CarsAPI';
 import { useNavigate } from 'react-router-dom';
